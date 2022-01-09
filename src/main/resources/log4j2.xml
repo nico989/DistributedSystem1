@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO" strict="true">
+    <Properties>
+        <Property name="appName">banky</Property>
+    </Properties>
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d [%highlight{%-5level}] %c:%L - %msg%n"
+                           disableAnsi="false"/>
+        </Console>
+        <File name="file" fileName="${appName}.log" append="false">
+            <PatternLayout pattern="%d [%-5level] %c:%L - %msg%n"/>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Root level="INFO" additivity="false">
+            <AppenderRef ref="console"/>
+            <AppenderRef ref="file"/>
+        </Root>
+    </Loggers>
+</Configuration>
